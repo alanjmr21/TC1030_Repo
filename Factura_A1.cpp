@@ -94,7 +94,7 @@ void agregarArticulos(vector <Inventario> &Articulos){
    double Precio;
    int num_articulos;
  
-   cout << "¿Cuantos vendedores desea añadir?: ";
+   cout << "¿Cuantos articulos desea añadir?: ";
    cin >> num_articulos;
  
    for(int i=0; i < num_articulos; i++) {

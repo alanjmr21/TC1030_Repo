@@ -2,7 +2,7 @@
 #include <iostream>
 #include <ctime>
  
- 
+
 using namespace std;
  
 class Vendedor {
@@ -40,6 +40,30 @@ std::string GETDATE() {
 
     return str;    
 }
+
+void agregarVendedores(vector <Vendedor> &Vendedores){
+
+    int num_vendedores;
+    string nombre;
+    string claveVendedor;
+
+    cout << "¿Cuantos vendedores desea añadir?: ";
+    cin >> num_vendedores;
+
+    for(int i=0; i < num_vendedores; i++) {
+        
+        cout << "Ingrese el nombre del trabajdor: ";
+        cin.ignore();
+        getline(cin, nombre);
+
+        cout << "Ingrese la clave del trabajdor: ";
+        cin >> claveVendedor;
+
+        Vendedor v = {claveVendedor,nombre};
+
+        Vendedores.push_back(v);
+    }
+};
  
 void GeneraFactura(int contFactura, Factura arreglof[], Vendedor v1, Inventario i2, int Cant){
  
@@ -54,5 +78,8 @@ void GeneraFactura(int contFactura, Factura arreglof[], Vendedor v1, Inventario 
 };
  
 int main(){
- 
+
+
+
+
 };

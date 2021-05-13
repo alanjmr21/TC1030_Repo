@@ -64,6 +64,35 @@ void agregarVendedores(vector <Vendedor> &Vendedores){
         Vendedores.push_back(v);
     }
 };
+
+void agregarArticulos(vector <Inventario> &Articulos){
+ 
+   string Cve_Articulo;
+   string Descripcion;
+   double Precio;
+   int num_articulos;
+ 
+   cout << "¿Cuantos vendedores desea añadir?: ";
+   cin >> num_articulos;
+ 
+   for(int i=0; i < num_articulos; i++) {
+      
+       cout << "Ingrese el nombre del articulo: ";
+       cin.ignore();
+       getline(cin, Descripcion);
+ 
+       cout << "Ingrese la clave del articulo: ";
+       cin >> Cve_Articulo;
+ 
+       cout << "Ingrese el precio del articulo: ";
+       cin >> Precio;
+ 
+       Inventario a = {Cve_Articulo,Descripcion,Precio};
+ 
+       Articulos.push_back(a);
+   }
+}
+
  
 void GeneraFactura(int contFactura, Factura arreglof[], Vendedor v1, Inventario i2, int Cant){
  

@@ -5,12 +5,23 @@ using namespace std;
 
 class Persona {
     public:
+        Persona();
+        Persona(string, int);
         string getNombre();
         int getEdad();
 
     protected:
         string nombre;
         int edad;
+};
+
+Persona::Persona(){
+    nombre = "ninguno";
+    edad = 0;
+};
+Persona::Persona(string n, int e){
+    nombre = n;
+    edad = e;
 };
 
 string Persona::getNombre(){
@@ -51,26 +62,51 @@ void Estudiante::muestraDatos(){
     cout << nombre <<"   "<< edad << "    " << carrera<<endl;
 };
 
+class Maestro: public Persona{
+    public:
+        Maestro();
+        Maestro(string, int, string);
+        string get_depto(){return depto;};
+        void muestra_datos();
+    private:
+        string depto;
+};
+
+Maestro::Maestro() : Persona(){
+    depto = "Ninguno";
+};
+
+Maestro::Maestro(string n, int e, string d) : Persona(n, e){
+    depto = d;
+};
+
+void Maestro::muestra_datos(){
+    cout<<"Nombre\t\tEdad\tDepartamento"<<endl; 
+    cout<< nombre << "\t" <<edad<<"\t"<<depto << endl;
+};
+
 int main() {
 
-    string nombre;
-    string carrera;
-    int edad;
+    Estudiante est[2];
+    Maestro maestro[2];
 
-    cout << "Ingrese el nombre del estudiante: ";
-    getline(cin, nombre);
+    Estudiante e1("Alan Muñoz",19,"ITC");
+    Estudiante e2("Perla Tapia",19, "ARQ");
 
-    cout << "Ingrese la edad del estudiante: ";
-    cin >> edad;
+    est[0]=e1;
+    est[1]=e2;
 
-    cout << "Ingrese la carrera del estudiante: ";
-    cin.ignore();
-    getline(cin, carrera);
+    Maestro m1("Miss Rosy",26,"Frances");
+    Maestro m2("Miss Maribel",40,"Quimica");
 
-    Estudiante e1(nombre, edad, carrera);
+    maestro[0]=m1;
+    maestro[1]=m2;
 
-    cout << "\nDatos del estudiante ingresado\n";
-    e1.muestraDatos();
+    est[0].muestraDatos();
+    est[1].muestraDatos();
+
+    maestro[0].muestra_datos();
+    maestro[1].muestra_datos();
 
     return 0;
 };

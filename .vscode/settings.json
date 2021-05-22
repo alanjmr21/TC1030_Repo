@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "\"editor.formatOnSave\"": "\"true\"",
+        "ostream": "cpp",
+        "algorithm": "cpp"
+    }
+}

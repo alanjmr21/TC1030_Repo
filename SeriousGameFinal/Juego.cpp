@@ -42,8 +42,6 @@ int main() {
     vecPartesMaquina.push_back(new Transformador());
     vecPartesMaquina.push_back(new Asiento());
     vecPartesMaquina.push_back(new Computadora());
-
-    PersonajePrincipal J1("Alan");
     
     LabMate Laboratorio1;
     LabBiologia Laboratorio2;
